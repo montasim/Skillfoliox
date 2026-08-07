@@ -25,6 +25,12 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { categories, skills } from "@/lib/skills"
 import { absoluteUrl, seoMeta, site } from "@/lib/site"
 
@@ -272,15 +278,22 @@ function App() {
                         View skill <ArrowRight />
                       </Link>
                     </Button>
-                    <CopyButton
-                      value={skill.installCommand}
-                      label="Copy install command"
-                      variant="outline"
-                      size="icon-lg"
-                      className="rounded-none border-2 border-ink hover:bg-brand-soft"
-                    >
-                      <Command />
-                    </CopyButton>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <CopyButton
+                            value={skill.installCommand}
+                            label="Copy install command"
+                            variant="outline"
+                            size="icon-lg"
+                            className="rounded-none border-2 border-ink hover:bg-brand-soft"
+                          >
+                            <Command />
+                          </CopyButton>
+                        </TooltipTrigger>
+                        <TooltipContent side="top">Copy command</TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   </div>
                 </CardContent>
               </Card>
