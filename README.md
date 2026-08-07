@@ -4,6 +4,7 @@
 
 [![Skillfolio live status](https://img.shields.io/website?url=https%3A%2F%2Fskillfoliox.netlify.app&up_message=online&down_message=offline&label=Skillfolio)](https://skillfoliox.netlify.app)
 [![GitHub last commit](https://img.shields.io/github/last-commit/montasim/Skillfoliox?label=last%20commit)](https://github.com/montasim/Skillfoliox/commits/main)
+[![Support on SupportKori](https://img.shields.io/badge/Support_on-SupportKori-00B8B5)](https://www.supportkori.com/montasim)
 
 Skillfolio gives developers one place to browse Montasim's reusable agent skills, understand what each skill does, inspect its source documentation, and copy its verified install command. The catalog is intentionally file-backed: skill metadata lives in local JSON, while each detail page fetches and renders the skill repository's current `README.md` directly from GitHub.
 
@@ -242,6 +243,10 @@ Issues and pull requests are welcome. For a code contribution:
 4. Describe the user-visible change and any remaining limitations in the pull request.
 
 The project does not yet include dedicated `CONTRIBUTING.md` or `CODE_OF_CONDUCT.md` files.
+
+## Funding
+
+If Skillfolio is useful to you, optional support through [SupportKori](https://www.supportkori.com/montasim) helps maintain the catalog, hosting, and continued development. Bug reports, documentation improvements, code contributions, and sharing the project are equally valuable ways to help.
 
 ## Author
 
