@@ -19,5 +19,26 @@
       "Codex and Claude Code installation",
       "Deterministic README validation"
     ]
+  },
+  {
+    "slug": "ensure-social-preview",
+    "name": "Ensure Social Preview",
+    "mark": "SP",
+    "category": "SEO",
+    "status": "Stable",
+    "version": "0.1.0",
+    "featured": false,
+    "summary": "Audits, creates, repairs, and verifies large-image social previews for web apps and websites.",
+    "description": "An evidence-based skill for Codex and Claude Code that validates crawler-visible Open Graph and Twitter Card metadata, repairs framework-native metadata, and creates branded 1200×630 preview assets when needed.",
+    "repository": "https://github.com/montasim/ensure-social-preview",
+    "branch": "main",
+    "readme": "https://raw.githubusercontent.com/montasim/ensure-social-preview/main/README.md",
+    "installCommand": "npx --yes --package=ensure-social-preview@latest ensure-social-preview --target codex",
+    "compatibility": ["OpenAI Codex", "Claude Code"],
+    "uses": [
+      "Open Graph and Twitter Card audits",
+      "Branded 1200×630 preview creation",
+      "Crawler-visible metadata verification"
+    ]
   }
 ]

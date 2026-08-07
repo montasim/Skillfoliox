@@ -42,7 +42,8 @@ The project is designed for a personally maintained collection rather than an au
 
 | Skill | Status | Compatibility | Purpose |
 | --- | --- | --- | --- |
-| [Write Project README](https://skillfoliox.netlify.app/skills/write-project-readme) | Stable · v0.2.0 | OpenAI Codex | Build a complete project README from verified repository evidence. |
+| [Write Project README](https://skillfoliox.netlify.app/skills/write-project-readme) | Stable · v0.3.0 | OpenAI Codex, Claude Code | Build a complete project README from verified repository evidence. |
+| [Ensure Social Preview](https://skillfoliox.netlify.app/skills/ensure-social-preview) | Stable · v0.1.0 | OpenAI Codex, Claude Code | Audit, create, repair, and verify large-image social previews. |
 
 Catalog values come from [`src/data/skills.json`](src/data/skills.json); they are not synchronized automatically with GitHub releases.
 
