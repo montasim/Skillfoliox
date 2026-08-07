@@ -49,7 +49,7 @@ export function SiteHeader() {
             className="rounded-none border-2 border-[#20242C] bg-transparent hover:bg-[#20242C] hover:text-white"
           >
             <a
-              href="https://github.com/montasim/Skillfolio"
+              href="https://github.com/montasim/Skillfoliox"
               target="_blank"
               rel="noreferrer"
             >

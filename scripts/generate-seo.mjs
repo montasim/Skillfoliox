@@ -1,6 +1,8 @@
 import { readFileSync, writeFileSync } from "node:fs"
 
-const rootUrl = (process.env.VITE_SITE_URL || "http://localhost:3000").replace(/\/$/, "")
+const rootUrl = (
+  process.env.VITE_SITE_URL || "https://skillfoliox.netlify.app"
+).replace(/\/$/, "")
 const skills = JSON.parse(readFileSync(new URL("../src/data/skills.json", import.meta.url), "utf8"))
 const urls = ["/", ...skills.map((skill) => `/skills/${skill.slug}`)]
 const today = new Date().toISOString().slice(0, 10)

@@ -6,7 +6,7 @@ export const site = {
   description:
     "A curated portfolio of reusable skills that teach AI coding agents how to do one job exceptionally well.",
   author: "Montasim",
-  url: (configuredUrl || "http://localhost:3000").replace(/\/$/, ""),
+  url: (configuredUrl || "https://skillfoliox.netlify.app").replace(/\/$/, ""),
   image: "/og-image.png",
   locale: "en_US",
 }

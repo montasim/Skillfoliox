@@ -5,3 +5,4 @@
 [build.environment]
   NODE_VERSION = "24"
   PNPM_VERSION = "10.30.3"
+  VITE_SITE_URL = "https://skillfoliox.netlify.app"

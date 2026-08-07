@@ -18,7 +18,10 @@ Skill metadata—including repository and raw README links—lives in `src/data/
 Set `VITE_SITE_URL` to the deployed origin before building so canonical links, Open Graph images, `robots.txt`, and `sitemap.xml` use the correct absolute URL:
 
 ```bash
-VITE_SITE_URL=https://skills.example.com pnpm build
+VITE_SITE_URL=https://skillfoliox.netlify.app pnpm build
 ```
 
 The favicon, install icons, and 1200×630 social card live in `public/`.
+
+Production: https://skillfoliox.netlify.app  
+Repository: https://github.com/montasim/Skillfoliox
