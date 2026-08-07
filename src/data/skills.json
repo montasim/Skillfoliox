@@ -11,7 +11,6 @@
     "description": "An evidence-driven, project-type-aware skill for Codex and Claude Code that creates or regenerates a software project's root README with portable installation and deterministic validation.",
     "repository": "https://github.com/montasim/write-project-readme",
     "branch": "main",
-    "readme": "https://raw.githubusercontent.com/montasim/write-project-readme/main/README.md",
     "installCommand": "npx --yes --package=write-project-readme@latest write-project-readme --target codex",
     "compatibility": ["OpenAI Codex", "Claude Code"],
     "uses": [
@@ -32,7 +31,6 @@
     "description": "An evidence-based skill for Codex and Claude Code that validates crawler-visible Open Graph and Twitter Card metadata, repairs framework-native metadata, and creates branded 1200×630 preview assets when needed.",
     "repository": "https://github.com/montasim/ensure-social-preview",
     "branch": "main",
-    "readme": "https://raw.githubusercontent.com/montasim/ensure-social-preview/main/README.md",
     "installCommand": "npx --yes --package=ensure-social-preview@latest ensure-social-preview --target codex",
     "compatibility": ["OpenAI Codex", "Claude Code"],
     "uses": [

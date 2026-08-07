@@ -2,7 +2,6 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
-import { seoMeta, site } from "@/lib/site"
 import appCss from "../styles.css?url"
 
 export const Route = createRootRoute({
@@ -22,7 +21,6 @@ export const Route = createRootRoute({
         content:
           "AI agent skills, Codex skills, Claude Code skills, developer tools, agent workflows",
       },
-      ...seoMeta({ title: site.title, description: site.description }),
     ],
     links: [
       {
