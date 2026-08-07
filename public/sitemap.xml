@@ -3,4 +3,12 @@
   <url><loc>https://skillfoliox.netlify.app/</loc></url>
   <url><loc>https://skillfoliox.netlify.app/skills/write-project-readme</loc></url>
   <url><loc>https://skillfoliox.netlify.app/skills/ensure-social-preview</loc></url>
+  <url><loc>https://skillfoliox.netlify.app/skills/sync-project-metadata</loc></url>
+  <url><loc>https://skillfoliox.netlify.app/skills/craft-github-release</loc></url>
+  <url><loc>https://skillfoliox.netlify.app/skills/verify-project-release</loc></url>
+  <url><loc>https://skillfoliox.netlify.app/skills/prepare-github-project</loc></url>
+  <url><loc>https://skillfoliox.netlify.app/skills/prepare-netlify-deployment</loc></url>
+  <url><loc>https://skillfoliox.netlify.app/skills/publish-skill-to-skillfolio</loc></url>
+  <url><loc>https://skillfoliox.netlify.app/skills/audit-frontend-consistency</loc></url>
+  <url><loc>https://skillfoliox.netlify.app/skills/ship-agent-skill</loc></url>
 </urlset>

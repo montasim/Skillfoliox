@@ -44,6 +44,14 @@ The project is designed for a personally maintained collection rather than an au
 | --- | --- | --- | --- |
 | [Write Project README](https://skillfoliox.netlify.app/skills/write-project-readme) | Stable · v0.3.0 | OpenAI Codex, Claude Code | Build a complete project README from verified repository evidence. |
 | [Ensure Social Preview](https://skillfoliox.netlify.app/skills/ensure-social-preview) | Stable · v0.1.0 | OpenAI Codex, Claude Code | Audit, create, repair, and verify large-image social previews. |
+| [Sync Project Metadata](https://skillfoliox.netlify.app/skills/sync-project-metadata)             | Stable · v0.1.0 | OpenAI Codex, Claude Code | Audit and align project identity and release metadata.              |
+| [Craft GitHub Release](https://skillfoliox.netlify.app/skills/craft-github-release)               | Stable · v0.1.0 | OpenAI Codex, Claude Code | Create trustworthy release notes from verified repository evidence. |
+| [Verify Project Release](https://skillfoliox.netlify.app/skills/verify-project-release)           | Stable · v0.1.0 | OpenAI Codex, Claude Code | Verify GitHub, npm, CI, tag, and install-command alignment.         |
+| [Prepare GitHub Project](https://skillfoliox.netlify.app/skills/prepare-github-project)           | Stable · v0.1.0 | OpenAI Codex, Claude Code | Prepare repository metadata, community files, security, and CI.     |
+| [Prepare Netlify Deployment](https://skillfoliox.netlify.app/skills/prepare-netlify-deployment)   | Stable · v0.1.0 | OpenAI Codex, Claude Code | Audit and prepare reliable Netlify build contracts.                 |
+| [Publish Skill to Skillfolio](https://skillfoliox.netlify.app/skills/publish-skill-to-skillfolio) | Stable · v0.1.0 | OpenAI Codex, Claude Code | Publish verified skills into a local Skillfolio catalog.            |
+| [Audit Frontend Consistency](https://skillfoliox.netlify.app/skills/audit-frontend-consistency)   | Stable · v0.1.0 | OpenAI Codex, Claude Code | Audit frontend visual and interaction consistency.                  |
+| [Ship Agent Skill](https://skillfoliox.netlify.app/skills/ship-agent-skill)                       | Stable · v0.1.0 | OpenAI Codex, Claude Code | Validate, package, publish, release, and verify Agent Skills.       |
 
 Catalog values come from [`src/data/skills.json`](src/data/skills.json); they are not synchronized automatically with GitHub releases.
 
