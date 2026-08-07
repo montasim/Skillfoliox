@@ -1,6 +1,27 @@
 {
   "name": "skillfolio",
   "private": true,
+  "description": "A curated portfolio of reusable SKILL.md capabilities for Claude Code, OpenAI Codex, Cursor, and other AI coding agents.",
+  "keywords": [
+    "agent-skills",
+    "ai-agents",
+    "skill-md",
+    "skill-library",
+    "claude-code",
+    "openai-codex",
+    "cursor",
+    "developer-tools",
+    "tanstack-start",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "shadcn-ui"
+  ],
+  "homepage": "https://github.com/montasim/Skillfolio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/montasim/Skillfolio.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite dev --port 3000",
