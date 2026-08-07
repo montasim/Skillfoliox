@@ -15,9 +15,9 @@ import { absoluteUrl, seoMeta, site } from "@/lib/site"
 export const Route = createFileRoute("/skills/$slug")({
   head: ({ params }) => {
     const skill = getSkill(params.slug)
-    if (!skill) return { meta: [{ title: `Skill not found — ${site.name}` }] }
+    if (!skill) return { meta: [{ title: `Skill not found - ${site.name}` }] }
     const path = `/skills/${skill.slug}`
-    const title = `${skill.name} — ${site.name}`
+    const title = `${skill.name} - ${site.name}`
     return {
       meta: seoMeta({
         title,
@@ -92,7 +92,6 @@ function SkillPage() {
               <span className="font-mono text-eyebrow tracking-wider text-brand uppercase">
                 {skill.category}
               </span>
-              <span className="size-1 rounded-full bg-brand-bright" />
               <span className="font-mono text-eyebrow">v{skill.version}</span>
               <Badge
                 variant="outline"
@@ -181,10 +180,10 @@ function SkillPage() {
           </div>
         </aside>
 
-        <article className="min-w-0 overflow-hidden rounded-2xl border border-ink/15 bg-white shadow-[0_18px_60px_rgba(32,36,44,.08)]">
-          <header className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/15 bg-paper px-5 py-4 sm:px-7">
+        <article className="min-w-0 overflow-hidden rounded-none border-2 border-ink bg-white shadow-[6px_6px_0_var(--color-ink)]">
+          <header className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-ink bg-paper px-5 py-4 sm:px-7">
             <div className="flex items-center gap-3">
-              <span className="grid size-9 place-items-center rounded-lg bg-brand text-white">
+              <span className="grid size-9 place-items-center border border-ink bg-brand text-white">
                 <FileText className="size-4" />
               </span>
               <div>
