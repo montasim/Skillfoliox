@@ -148,7 +148,6 @@ Add one object to [`src/data/skills.json`](src/data/skills.json). The TypeScript
   "description": "A longer description used by search and page metadata.",
   "repository": "https://github.com/owner/example-skill",
   "branch": "main",
-  "readme": "https://raw.githubusercontent.com/owner/example-skill/main/README.md",
   "installCommand": "npx --yes --package=github:owner/example-skill#v1.0.0 example-skill",
   "compatibility": ["OpenAI Codex"],
   "uses": ["Example workflow"]
@@ -158,9 +157,9 @@ Add one object to [`src/data/skills.json`](src/data/skills.json). The TypeScript
 When adding or updating an entry:
 
 1. Use a unique URL-safe `slug`; it becomes `/skills/<slug>`.
-2. Confirm the repository, branch, raw README URL, version, and install command resolve successfully.
+2. Confirm the repository, branch, version, and install command resolve successfully. README and source URLs are derived from the repository facts.
 3. Keep `summary` short enough for a catalog card and use `description` for search and SEO context.
-4. Set `featured` deliberately; the first featured entry is used by the homepage callout.
+4. Set exactly one catalog entry as `featured`; it is used by the homepage callout.
 5. Run `pnpm build` to regenerate `public/sitemap.xml` and `public/robots.txt` with every skill route.
 6. Open the detail page and check README links, images, tables, and code blocks.
 
@@ -175,7 +174,7 @@ When adding or updating an entry:
 | `pnpm typecheck` | Check TypeScript without emitting files. |
 | `pnpm check` | Check JavaScript and TypeScript formatting with Prettier. |
 | `pnpm format` | Rewrite JavaScript and TypeScript files with Prettier. |
-| `pnpm test` | Run Vitest once. No test files are currently present, so this command exits non-zero. |
+| `pnpm test` | Run the catalog, publishing, Repository README, and Skill-detail frame tests. |
 
 The verified passing checks for the current repository are:
 
@@ -205,9 +204,9 @@ For another Netlify project or a custom domain, update `VITE_SITE_URL` in the de
 
 ```text
 src/
-├── components/          Shared layout, loaders, README renderer, and shadcn UI
+├── components/          Skill-detail frame, README module, shared layout, and shadcn UI
 ├── data/skills.json     File-backed skill catalog
-├── lib/                 Skill lookup and site/SEO helpers
+├── lib/                 Deep catalog and Publishing metadata modules
 └── routes/              Catalog and skill detail routes
 public/                  Icons, manifest, social preview, robots, and sitemap
 scripts/generate-seo.mjs Sitemap and robots generator
@@ -219,13 +218,13 @@ netlify.toml             Netlify build and production URL configuration
 
 Skillfolio is a small, actively evolving personal portfolio. Current constraints are:
 
-- The catalog currently contains one manually maintained skill.
+- The catalog is manually maintained and validated during development and builds.
 - Skill metadata and pinned versions do not update automatically from GitHub.
 - README rendering depends on public GitHub and `raw.githubusercontent.com` availability.
 - Only public README URLs are supported; there is no authentication flow for private repositories.
 - Search and category filtering run in the browser against the bundled JSON catalog.
-- The project has no automated test files yet; `pnpm test` currently exits with “No test files found.”
-- The current Prettier check is not yet clean; lint, type-checking, and production builds pass.
+- Automated tests cover catalog invariants, Publishing metadata, Repository README behavior, and Skill-detail states.
+- The current Prettier check is not yet clean; lint, type-checking, tests, and production builds pass.
 - The application itself does not store user accounts, form submissions, or catalog data in a database. Hosting and GitHub requests remain subject to those providers' policies and logs.
 
 ## Support and security

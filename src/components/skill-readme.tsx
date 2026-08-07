@@ -4,11 +4,16 @@ import type { Components } from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { AlertCircle, RefreshCw } from "lucide-react"
 
-import { ReadmeSkeleton } from "@/components/skill-page-skeleton"
+import { ReadmeSkeleton } from "@/components/readme-skeleton"
 import { Button } from "@/components/ui/button"
 import type { Skill } from "@/lib/skills"
 
 type SkillReadmeProps = { skill: Skill }
+
+type ReadmeState =
+  | { status: "loading" }
+  | { status: "ready"; markdown: string }
+  | { status: "error"; message: string }
 
 function resolveUrl(value: string | undefined, skill: Skill, image = false) {
   if (
@@ -17,11 +22,9 @@ function resolveUrl(value: string | undefined, skill: Skill, image = false) {
     value.startsWith("#")
   )
     return value
-  const path = value.replace(/^\.\//, "")
-  if (image) {
-    return `${skill.repository.replace("github.com", "raw.githubusercontent.com")}/${skill.branch}/${path}`
-  }
-  return `${skill.repository}/blob/${skill.branch}/${path}`
+  const path = value.replace(/^\.?\//, "")
+  const baseUrl = image ? skill.rawContentBaseUrl : skill.sourceContentBaseUrl
+  return `${baseUrl}/${path}`
 }
 
 function markdownComponents(skill: Skill): Components {
@@ -127,16 +130,14 @@ function markdownComponents(skill: Skill): Components {
 }
 
 export function SkillReadme({ skill }: SkillReadmeProps) {
-  const [markdown, setMarkdown] = useState("")
-  const [error, setError] = useState("")
+  const [state, setState] = useState<ReadmeState>({ status: "loading" })
   const [attempt, setAttempt] = useState(0)
   const components = useMemo(() => markdownComponents(skill), [skill])
 
   useEffect(() => {
     const controller = new AbortController()
-    setMarkdown("")
-    setError("")
-    fetch(skill.readme, {
+    setState({ status: "loading" })
+    fetch(skill.readmeUrl, {
       headers: { Accept: "text/plain" },
       signal: controller.signal,
     })
@@ -144,20 +145,22 @@ export function SkillReadme({ skill }: SkillReadmeProps) {
         if (!response.ok) throw new Error(`GitHub returned ${response.status}`)
         return response.text()
       })
-      .then(setMarkdown)
+      .then((markdown) => setState({ status: "ready", markdown }))
       .catch((reason: unknown) => {
         if (reason instanceof DOMException && reason.name === "AbortError")
           return
-        setError(
-          reason instanceof Error
-            ? reason.message
-            : "The README could not be loaded"
-        )
+        setState({
+          status: "error",
+          message:
+            reason instanceof Error
+              ? reason.message
+              : "The README could not be loaded",
+        })
       })
     return () => controller.abort()
-  }, [attempt, skill.readme])
+  }, [attempt, skill.readmeUrl])
 
-  if (error) {
+  if (state.status === "error") {
     return (
       <div className="flex min-h-96 flex-col items-center justify-center px-6 py-16 text-center">
         <span className="grid size-14 place-items-center border-2 border-ink bg-brand-soft text-brand">
@@ -167,7 +170,8 @@ export function SkillReadme({ skill }: SkillReadmeProps) {
           README unavailable.
         </h2>
         <p className="mt-3 max-w-lg text-ink/60">
-          {error}. Check the connection or open the source directly on GitHub.
+          {state.message}. Check the connection or open the source directly on
+          GitHub.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Button
@@ -187,7 +191,7 @@ export function SkillReadme({ skill }: SkillReadmeProps) {
     )
   }
 
-  if (!markdown) {
+  if (state.status === "loading") {
     return <ReadmeSkeleton />
   }
 
@@ -198,7 +202,7 @@ export function SkillReadme({ skill }: SkillReadmeProps) {
         components={components}
         skipHtml
       >
-        {markdown}
+        {state.markdown}
       </ReactMarkdown>
     </div>
   )

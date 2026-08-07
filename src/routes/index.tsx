@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useState } from "react"
 import { Link, createFileRoute } from "@tanstack/react-router"
 import {
   ArrowDown,
@@ -31,61 +31,35 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { categories, skills } from "@/lib/skills"
-import { absoluteUrl, seoMeta, site } from "@/lib/site"
+import { skillCatalog } from "@/lib/skills"
+import { publishing, site } from "@/lib/site"
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: seoMeta({ title: site.title, description: site.description }),
-    links: [{ rel: "canonical", href: absoluteUrl("/") }],
+    meta: publishing.pageMeta({
+      title: site.title,
+      description: site.description,
+    }),
+    links: [{ rel: "canonical", href: publishing.absoluteUrl("/") }],
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          name: site.name,
-          headline: "Small files. Serious leverage.",
-          description: site.description,
-          url: absoluteUrl("/"),
-          author: { "@type": "Person", name: site.author },
-          mainEntity: {
-            "@type": "ItemList",
-            numberOfItems: skills.length,
-            itemListElement: skills.map((skill, index) => ({
-              "@type": "ListItem",
-              position: index + 1,
-              name: skill.name,
-              url: absoluteUrl(`/skills/${skill.slug}`),
-            })),
-          },
-        }),
+        children: JSON.stringify(publishing.homeStructuredData()),
       },
     ],
   }),
   component: App,
 })
 
+const categories = skillCatalog.categories()
+
 function App() {
   const [query, setQuery] = useState("")
   const [category, setCategory] = useState("All")
 
-  const visibleSkills = useMemo(() => {
-    const term = query.trim().toLowerCase()
-    return skills.filter((skill) => {
-      const matchesCategory = category === "All" || skill.category === category
-      const matchesQuery =
-        !term ||
-        [skill.name, skill.summary, skill.category, skill.description]
-          .join(" ")
-          .toLowerCase()
-          .includes(term)
-      return matchesCategory && matchesQuery
-    })
-  }, [category, query])
-
-  const featuredSkill = skills.find((skill) => skill.featured) ?? skills[0]
-  const stableCount = skills.filter((skill) => skill.status === "Stable").length
+  const visibleSkills = skillCatalog.discover({ query, category })
+  const featuredSkill = skillCatalog.featured()
+  const catalogSummary = skillCatalog.summary()
 
   return (
     <main>
@@ -142,17 +116,17 @@ function App() {
                 {[
                   {
                     label: "Skills published",
-                    value: String(skills.length).padStart(2, "0"),
+                    value: String(catalogSummary.total).padStart(2, "0"),
                     Icon: FileText,
                   },
                   {
                     label: "Disciplines",
-                    value: String(categories.length).padStart(2, "0"),
+                    value: String(catalogSummary.categories).padStart(2, "0"),
                     Icon: Layers3,
                   },
                   {
                     label: "Stable releases",
-                    value: String(stableCount).padStart(2, "0"),
+                    value: String(catalogSummary.stable).padStart(2, "0"),
                     Icon: ShieldCheck,
                   },
                   { label: "Status", value: "Growing", Icon: TrendingUp },
