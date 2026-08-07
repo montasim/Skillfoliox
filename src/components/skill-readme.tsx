@@ -80,7 +80,7 @@ function markdownComponents(skill: Skill): Components {
     ),
     code: ({ className, children }) => (
       <code
-        className={`rounded bg-fog px-1.5 py-0.5 font-mono text-[0.86em] text-ink ${className ?? ""}`}
+        className={`rounded-none bg-fog px-1.5 py-0.5 font-mono text-[0.86em] text-ink ${className ?? ""}`}
       >
         {children}
       </code>
@@ -160,7 +160,7 @@ export function SkillReadme({ skill }: SkillReadmeProps) {
   if (error) {
     return (
       <div className="flex min-h-96 flex-col items-center justify-center px-6 py-16 text-center">
-        <span className="grid size-14 place-items-center rounded-full bg-brand-bright text-white">
+        <span className="grid size-14 place-items-center border-2 border-ink bg-brand-soft text-brand">
           <AlertCircle />
         </span>
         <h2 className="mt-5 font-heading text-3xl font-semibold">
@@ -172,11 +172,12 @@ export function SkillReadme({ skill }: SkillReadmeProps) {
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Button
             variant="outline"
+            className="h-10 border-2 border-ink bg-white hover:bg-brand-soft"
             onClick={() => setAttempt((value) => value + 1)}
           >
             <RefreshCw /> Retry
           </Button>
-          <Button asChild>
+          <Button asChild className="h-10 border-2 border-ink">
             <a href={skill.repository} target="_blank" rel="noreferrer">
               Open GitHub
             </a>

@@ -66,8 +66,8 @@ export function SkillPageSkeleton() {
           <Skeleton className="h-12 w-full" />
           <Skeleton className="h-12 w-full" />
         </aside>
-        <article className="min-w-0 overflow-hidden rounded-2xl border border-ink/15 bg-white shadow-[0_18px_60px_rgba(32,36,44,.08)]">
-          <header className="flex items-center gap-3 border-b border-ink/15 bg-paper px-5 py-4 sm:px-7">
+        <article className="min-w-0 overflow-hidden rounded-none border-2 border-ink bg-white shadow-[6px_6px_0_var(--color-ink)]">
+          <header className="flex items-center gap-3 border-b-2 border-ink bg-paper px-5 py-4 sm:px-7">
             <BrandMark className="size-9 opacity-35 grayscale" />
             <div className="space-y-2">
               <Skeleton className="h-4 w-24" />

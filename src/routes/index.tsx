@@ -105,29 +105,28 @@ function App() {
             >
               <a href="#library">
                 EXPLORE THE SHELF
-                <span className="grid size-11 place-items-center rounded-full bg-brand-bright text-white transition-transform group-hover/button:translate-y-1">
+                <span className="grid size-11 place-items-center border-2 border-ink bg-brand-bright text-white transition-transform group-hover/button:translate-y-1">
                   <ArrowDown className="size-4" />
                 </span>
               </a>
             </Button>
           </div>
 
-          <Card className="animate-in gap-0 rounded-2xl border border-ink/15 bg-white py-0 shadow-[0_2px_0_rgba(32,36,44,.08),0_18px_50px_rgba(32,36,44,.07)] ring-0 duration-700 [animation-delay:140ms] [animation-fill-mode:both] fade-in slide-in-from-bottom-3 motion-reduce:animate-none">
+          <Card className="animate-in gap-0 rounded-none border-2 border-ink bg-white py-0 shadow-[6px_6px_0_var(--color-ink)] ring-0 duration-700 [animation-delay:140ms] [animation-fill-mode:both] fade-in slide-in-from-bottom-3 motion-reduce:animate-none">
             <CardHeader className="p-6 sm:p-8">
               <div>
                 <Badge
                   variant="outline"
-                  className="gap-2 rounded-full border-brand-bright/30 bg-brand-bright/5 px-4 py-2 font-mono text-meta font-normal tracking-[0.16em] text-brand-bright"
+                  className="h-7 rounded-none border-ink bg-brand-soft px-3 font-mono text-meta font-normal tracking-[0.16em] text-brand"
                 >
-                  <span className="size-2 rounded-full bg-brand-bright" /> QUICK
-                  STATS
+                  QUICK STATS
                 </Badge>
                 <CardTitle className="mt-4 text-2xl">
                   Library snapshot
                 </CardTitle>
               </div>
               <CardAction>
-                <Badge className="rounded-full bg-ink px-4 py-2 font-mono text-meta tracking-widest text-white">
+                <Badge className="h-7 rounded-none border border-ink bg-ink px-3 font-mono text-meta tracking-widest text-white">
                   2026
                 </Badge>
               </CardAction>
@@ -154,7 +153,7 @@ function App() {
                 ].map(({ label, value, Icon }) => (
                   <div
                     key={label}
-                    className="rounded-xl border border-ink/10 bg-paper/60 p-4 sm:p-5"
+                    className="border border-ink/15 bg-paper/60 p-4 sm:p-5"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <dt className="font-mono text-meta tracking-[0.16em] text-ink/50 uppercase">
@@ -171,7 +170,7 @@ function App() {
               <Link
                 to="/skills/$slug"
                 params={{ slug: featuredSkill.slug }}
-                className="group mt-6 flex items-center justify-between gap-4 rounded-xl border border-ink/10 p-4 transition-colors hover:border-brand hover:bg-brand-soft/30"
+                className="group mt-6 flex items-center justify-between gap-4 border border-ink/15 p-4 transition-colors hover:border-brand hover:bg-brand-soft/30"
               >
                 <span>
                   <span className="block font-mono text-meta tracking-[0.16em] text-brand uppercase">
@@ -181,7 +180,7 @@ function App() {
                     {featuredSkill.name}
                   </span>
                 </span>
-                <span className="grid size-10 shrink-0 place-items-center rounded-full border border-ink bg-brand-soft transition-transform group-hover:translate-x-1">
+                <span className="grid size-10 shrink-0 place-items-center border border-ink bg-brand-soft transition-transform group-hover:translate-x-1">
                   <ArrowRight className="size-4" />
                 </span>
               </Link>
@@ -278,7 +277,7 @@ function App() {
                       label="Copy install command"
                       variant="outline"
                       size="icon-lg"
-                      className="rounded-full border-2 border-ink hover:bg-brand-soft"
+                      className="rounded-none border-2 border-ink hover:bg-brand-soft"
                     >
                       <Command />
                     </CopyButton>
@@ -288,24 +287,37 @@ function App() {
             ))}
           </div>
         ) : (
-          <Card className="mt-10 border-2 border-dashed border-ink bg-white py-12 text-center ring-0">
-            <CardContent>
-              <SearchX className="mx-auto mb-4 size-9 text-brand-bright" />
-              <h3 className="font-heading text-2xl font-semibold">
-                Nothing on this shelf yet.
-              </h3>
-              <p className="mt-2 text-ink/60">
-                Try another keyword or clear the filters.
-              </p>
+          <Card
+            role="status"
+            aria-live="polite"
+            className="mt-10 gap-0 rounded-none border-2 border-ink bg-white py-0 shadow-[6px_6px_0_var(--color-ink)] ring-0"
+          >
+            <CardContent className="flex min-h-56 flex-col items-start gap-8 p-6 sm:p-8 md:flex-row md:items-center md:justify-between lg:p-10">
+              <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+                <div className="grid size-14 shrink-0 place-items-center border-2 border-ink bg-brand-soft text-brand">
+                  <SearchX className="size-6" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="font-mono text-eyebrow tracking-[0.18em] text-brand uppercase">
+                    No matches
+                  </p>
+                  <h3 className="mt-2 font-heading text-2xl font-semibold tracking-tight">
+                    Nothing on this shelf yet.
+                  </h3>
+                  <p className="mt-2 text-ink/60">
+                    Try another keyword or reset the shelf.
+                  </p>
+                </div>
+              </div>
               <Button
-                variant="link"
-                className="mt-4"
+                variant="outline"
+                className="h-11 rounded-none border-2 border-ink bg-white px-5 hover:bg-brand-soft"
                 onClick={() => {
                   setQuery("")
                   setCategory("All")
                 }}
               >
-                Clear filters
+                Reset shelf
               </Button>
             </CardContent>
           </Card>
