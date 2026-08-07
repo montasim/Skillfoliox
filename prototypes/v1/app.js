@@ -125,7 +125,7 @@ function renderDetail() {
   if (!root) return;
   const slug = new URLSearchParams(location.search).get('skill') || skills[0].slug;
   const skill = skills.find(item => item.slug === slug) || skills[0];
-  document.title = `${skill.name} — Fieldwork`;
+  document.title = `${skill.name} — Skillfolio`;
   root.innerHTML = `
     <section class="docs-grid border-b-2 border-ink">
       <div class="mx-auto max-w-[1380px] px-5 lg:px-10 py-12 lg:py-16 grid lg:grid-cols-[minmax(0,1fr)_390px] gap-10 lg:gap-16 items-end">

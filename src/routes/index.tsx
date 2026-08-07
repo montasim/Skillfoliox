@@ -87,7 +87,7 @@ function App() {
         <div className="mx-auto grid max-w-[1440px] items-stretch gap-12 px-5 py-12 sm:py-16 lg:grid-cols-[1.12fr_.88fr] lg:gap-16 lg:px-10 lg:py-20 xl:gap-24">
           <div className="flex animate-in flex-col justify-center duration-700 fade-in slide-in-from-bottom-3 motion-reduce:animate-none">
             <p className="mb-5 font-mono text-[11px] tracking-[0.2em] text-[#C04A16] uppercase">
-              Montasim&apos;s agent skill library / 2026
+              Montasim&apos;s agent skill portfolio / 2026
             </p>
             <h1 className="max-w-[850px] font-heading text-[clamp(4rem,7.5vw,7.5rem)] leading-[0.82] font-semibold tracking-[-0.07em]">
               Small files.
@@ -95,8 +95,8 @@ function App() {
               <span className="text-[#C04A16]">Serious leverage.</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed lg:text-xl">
-              A field-tested collection of skills that teach AI agents how to do
-              one job exceptionally well.
+              A curated portfolio of skills that teach AI agents how to do one
+              job exceptionally well.
             </p>
             <Button
               asChild

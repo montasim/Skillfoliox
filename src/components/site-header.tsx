@@ -30,7 +30,7 @@ export function SiteHeader() {
           className="group flex items-center gap-3 font-heading text-lg font-bold"
         >
           <BrandMark className="size-9 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[-4deg]" />
-          FIELDWORK
+          SKILLFOLIO
         </Link>
 
         <div className="hidden items-center gap-7 text-sm font-semibold sm:flex">
@@ -49,7 +49,7 @@ export function SiteHeader() {
             className="rounded-none border-2 border-[#20242C] bg-transparent hover:bg-[#20242C] hover:text-white"
           >
             <a
-              href="https://github.com/montasim/write-project-readme"
+              href="https://github.com/montasim/Skillfolio"
               target="_blank"
               rel="noreferrer"
             >
@@ -72,7 +72,7 @@ export function SiteHeader() {
           <SheetContent className="border-l-2 border-[#20242C] bg-[#F7F7F5]">
             <SheetHeader className="border-b-2 border-[#20242C] p-6">
               <SheetTitle className="font-heading text-2xl">
-                Fieldwork
+                Skillfolio
               </SheetTitle>
               <SheetDescription>
                 Reusable judgment for AI agents.

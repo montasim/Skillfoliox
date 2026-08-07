@@ -1,7 +1,7 @@
 {
-  "short_name": "Fieldwork",
-  "name": "Fieldwork — Agent skill library",
-  "description": "A field-tested collection of reusable skills for AI coding agents.",
+  "short_name": "Skillfolio",
+  "name": "Skillfolio — Agent skill library",
+  "description": "A curated portfolio of reusable skills for AI coding agents.",
   "icons": [
     {
       "src": "/app-icon-192.png",

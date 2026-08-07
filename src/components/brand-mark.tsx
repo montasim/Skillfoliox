@@ -11,7 +11,7 @@ export function BrandMark({ className, ...props }: BrandMarkProps) {
     <svg
       viewBox="0 0 40 40"
       role="img"
-      aria-label="Fieldwork"
+      aria-label="Skillfolio"
       className={cn("size-9", className)}
       {...props}
     >

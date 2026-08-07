@@ -1,4 +1,4 @@
-# Fieldwork prototype — v1
+# Skillfolio prototype — v1
 
 A static, responsive prototype for browsing Montasim's personal AI agent skills.
 

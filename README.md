@@ -1,6 +1,6 @@
-# Fieldwork
+# Skillfolio
 
-A frontend-only agent skill library built with TanStack Start, shadcn/ui, and Tailwind CSS.
+A frontend-only portfolio of reusable agent skills built with TanStack Start, shadcn/ui, and Tailwind CSS.
 
 ## Development
 

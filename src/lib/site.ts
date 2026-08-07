@@ -1,10 +1,10 @@
 const configuredUrl = import.meta.env.VITE_SITE_URL as string | undefined
 
 export const site = {
-  name: "Fieldwork",
-  title: "Fieldwork — Agent skill library",
+  name: "Skillfolio",
+  title: "Skillfolio — Agent skill library",
   description:
-    "A field-tested collection of reusable skills that teach AI coding agents how to do one job exceptionally well.",
+    "A curated portfolio of reusable skills that teach AI coding agents how to do one job exceptionally well.",
   author: "Montasim",
   url: (configuredUrl || "http://localhost:3000").replace(/\/$/, ""),
   image: "/og-image.png",
@@ -49,7 +49,7 @@ export function seoMeta({
     { property: "og:image:height", content: "630" },
     {
       property: "og:image:alt",
-      content: "Fieldwork — small files, serious leverage.",
+      content: "Skillfolio — small files, serious leverage.",
     },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
