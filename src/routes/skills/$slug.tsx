@@ -57,13 +57,13 @@ function SkillPage() {
   if (!skill) {
     return (
       <main className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-start justify-center px-5 py-20 lg:px-10">
-        <p className="font-mono text-xs tracking-[0.2em] text-[#C04A16] uppercase">
+        <p className="font-mono text-eyebrow tracking-[0.18em] text-brand uppercase">
           Skill not found
         </p>
-        <h1 className="mt-5 font-heading text-6xl leading-[0.9] font-semibold tracking-[-0.06em] sm:text-8xl">
+        <h1 className="mt-4 max-w-3xl font-heading text-4xl leading-[0.96] font-semibold tracking-[-0.04em] sm:text-5xl lg:text-page-title">
           Nothing lives at this slug.
         </h1>
-        <Button asChild variant="link" className="mt-7 h-auto p-0">
+        <Button asChild variant="link" className="mt-6 h-auto p-0">
           <Link to="/">
             <ArrowLeft /> Back to the library
           </Link>
@@ -76,60 +76,60 @@ function SkillPage() {
 
   return (
     <main>
-      <section className="border-b-2 border-[#20242C] bg-[#F7F7F5] [background-image:linear-gradient(rgba(192,74,22,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(192,74,22,.055)_1px,transparent_1px)] [background-size:24px_24px]">
-        <div className="mx-auto grid max-w-[1380px] items-end gap-10 px-5 py-12 lg:grid-cols-[minmax(0,1fr)_390px] lg:gap-16 lg:px-10 lg:py-16">
+      <section className="border-b-2 border-ink bg-paper [background-image:linear-gradient(rgba(192,74,22,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(192,74,22,.055)_1px,transparent_1px)] [background-size:24px_24px]">
+        <div className="mx-auto grid max-w-[1380px] items-end gap-10 px-5 py-12 lg:grid-cols-[minmax(0,1fr)_390px] lg:gap-16 lg:px-10 lg:py-14">
           <div>
             <Button
               asChild
               variant="link"
-              className="mb-8 h-auto p-0 font-mono text-[10px] tracking-wider uppercase"
+              className="mb-8 h-auto p-0 font-mono text-meta tracking-wider uppercase"
             >
               <Link to="/" hash="library">
                 <ArrowLeft /> Back to library
               </Link>
             </Button>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="font-mono text-xs tracking-wider text-[#C04A16] uppercase">
+              <span className="font-mono text-eyebrow tracking-wider text-brand uppercase">
                 {skill.category}
               </span>
-              <span className="size-1 rounded-full bg-[#E76F2E]" />
-              <span className="font-mono text-xs">v{skill.version}</span>
+              <span className="size-1 rounded-full bg-brand-bright" />
+              <span className="font-mono text-eyebrow">v{skill.version}</span>
               <Badge
                 variant="outline"
-                className="rounded-none border-[#20242C] bg-white font-mono text-[10px] tracking-wider uppercase"
+                className="rounded-none border-ink bg-white font-mono text-meta tracking-wider uppercase"
               >
                 {skill.status}
               </Badge>
             </div>
-            <h1 className="mt-6 max-w-4xl font-heading text-[clamp(3.4rem,7vw,6.8rem)] leading-[0.87] font-semibold tracking-[-0.065em]">
+            <h1 className="mt-5 max-w-3xl font-heading text-4xl leading-[0.96] font-semibold tracking-[-0.04em] sm:text-5xl lg:text-page-title">
               {skill.name}
             </h1>
-            <p className="mt-7 max-w-3xl text-lg leading-relaxed text-[#20242C]/70 lg:text-xl">
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink/70 lg:text-xl">
               {skill.summary}
             </p>
           </div>
 
-          <Card className="animate-in gap-0 rounded-none border-2 border-[#20242C] bg-[#FDE8D7] py-0 shadow-[6px_6px_0_#20242C] ring-0 duration-500 fade-in slide-in-from-right-3 motion-reduce:animate-none">
+          <Card className="animate-in gap-0 rounded-none border-2 border-ink bg-brand-soft py-0 shadow-[6px_6px_0_var(--color-ink)] ring-0 duration-500 fade-in slide-in-from-right-3 motion-reduce:animate-none">
             <CardHeader className="p-6 pb-0">
               <div className="flex items-center justify-between gap-4">
-                <CardTitle className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase">
+                <CardTitle className="flex items-center gap-2 font-mono text-meta tracking-widest uppercase">
                   <PackageCheck className="size-4" /> Install from GitHub
                 </CardTitle>
                 <Badge
                   variant="outline"
-                  className="rounded-none border-[#20242C] bg-white font-mono text-[9px]"
+                  className="rounded-none border-ink bg-white font-mono text-meta"
                 >
                   v{skill.version}
                 </Badge>
               </div>
             </CardHeader>
             <CardContent className="p-6">
-              <code className="block bg-[#20242C] p-4 font-mono text-[11px] leading-relaxed break-all text-white">
+              <code className="block bg-ink p-4 font-mono text-xs leading-relaxed break-all text-white">
                 {skill.installCommand}
               </code>
               <CopyButton
                 value={skill.installCommand}
-                className="mt-4 h-12 w-full rounded-none border-2 border-[#20242C] bg-white text-[#20242C] hover:bg-[#20242C] hover:text-white"
+                className="mt-4 h-12 w-full rounded-none border-2 border-ink bg-white text-ink hover:bg-ink hover:text-white"
               >
                 Copy install command
               </CopyButton>
@@ -140,56 +140,56 @@ function SkillPage() {
 
       <section className="mx-auto grid max-w-[1380px] items-start gap-8 px-5 py-10 lg:grid-cols-[230px_minmax(0,1fr)] lg:gap-12 lg:px-10 lg:py-16">
         <aside className="lg:sticky lg:top-24">
-          <p className="font-mono text-[10px] tracking-[0.18em] text-[#20242C]/45 uppercase">
+          <p className="font-mono text-meta tracking-[0.18em] text-ink/45 uppercase">
             Repository
           </p>
-          <Separator className="mt-4 h-0.5 bg-[#20242C]" />
-          <dl className="divide-y divide-[#20242C]/15 text-sm">
+          <Separator className="mt-4 h-0.5 bg-ink" />
+          <dl className="divide-y divide-ink/15 text-sm">
             <div className="flex justify-between gap-4 py-4">
-              <dt className="text-[#20242C]/55">Owner</dt>
+              <dt className="text-ink/55">Owner</dt>
               <dd className="font-semibold">{repositoryOwner}</dd>
             </div>
             <div className="flex justify-between gap-4 py-4">
-              <dt className="text-[#20242C]/55">Branch</dt>
+              <dt className="text-ink/55">Branch</dt>
               <dd className="font-mono text-xs">{skill.branch}</dd>
             </div>
             <div className="flex justify-between gap-4 py-4">
-              <dt className="text-[#20242C]/55">Document</dt>
+              <dt className="text-ink/55">Document</dt>
               <dd className="font-mono text-xs">README.md</dd>
             </div>
           </dl>
           <Button
             asChild
             variant="outline"
-            className="mt-5 h-11 w-full justify-between rounded-none border-2 border-[#20242C] bg-white hover:bg-[#20242C] hover:text-white"
+            className="mt-5 h-11 w-full justify-between rounded-none border-2 border-ink bg-white hover:bg-ink hover:text-white"
           >
             <a href={skill.repository} target="_blank" rel="noreferrer">
               <GitHubIcon /> View on GitHub <ExternalLink />
             </a>
           </Button>
           <div className="mt-8 hidden lg:block">
-            <p className="font-mono text-[10px] tracking-[0.18em] text-[#20242C]/45 uppercase">
+            <p className="font-mono text-meta tracking-[0.18em] text-ink/45 uppercase">
               Good for
             </p>
-            <ul className="mt-3 space-y-2 text-sm text-[#20242C]/70">
+            <ul className="mt-3 space-y-2 text-sm text-ink/70">
               {skill.uses.map((use) => (
                 <li key={use} className="flex gap-2">
-                  <span className="text-[#E76F2E]">◆</span> {use}
+                  <span className="text-brand-bright">◆</span> {use}
                 </li>
               ))}
             </ul>
           </div>
         </aside>
 
-        <article className="min-w-0 overflow-hidden rounded-2xl border border-[#20242C]/15 bg-white shadow-[0_18px_60px_rgba(32,36,44,.08)]">
-          <header className="flex flex-wrap items-center justify-between gap-3 border-b border-[#20242C]/15 bg-[#F7F7F5] px-5 py-4 sm:px-7">
+        <article className="min-w-0 overflow-hidden rounded-2xl border border-ink/15 bg-white shadow-[0_18px_60px_rgba(32,36,44,.08)]">
+          <header className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/15 bg-paper px-5 py-4 sm:px-7">
             <div className="flex items-center gap-3">
-              <span className="grid size-9 place-items-center rounded-lg bg-[#C04A16] text-white">
+              <span className="grid size-9 place-items-center rounded-lg bg-brand text-white">
                 <FileText className="size-4" />
               </span>
               <div>
                 <p className="text-sm font-semibold">README.md</p>
-                <p className="font-mono text-[9px] tracking-wider text-[#20242C]/45 uppercase">
+                <p className="font-mono text-meta tracking-wider text-ink/45 uppercase">
                   GitHub source · {skill.branch}
                 </p>
               </div>
@@ -197,7 +197,7 @@ function SkillPage() {
             <Button
               asChild
               variant="link"
-              className="h-auto p-0 font-mono text-[10px] tracking-wider uppercase"
+              className="h-auto p-0 font-mono text-meta tracking-wider uppercase"
             >
               <a
                 href={`${skill.repository}/blob/${skill.branch}/README.md`}

@@ -46,15 +46,15 @@ export const Route = createRootRoute({
   }),
   notFoundComponent: () => (
     <main className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-start justify-center px-5 py-20 lg:px-10">
-      <p className="font-mono text-xs tracking-[0.2em] text-[#C04A16] uppercase">
+      <p className="font-mono text-eyebrow tracking-[0.18em] text-brand uppercase">
         404 / shelf miss
       </p>
-      <h1 className="mt-5 max-w-2xl font-heading text-6xl leading-[0.9] font-semibold tracking-[-0.06em] text-[#20242C] sm:text-8xl">
+      <h1 className="mt-4 max-w-2xl font-heading text-4xl leading-[0.96] font-semibold tracking-[-0.04em] text-ink sm:text-5xl lg:text-page-title">
         That skill is not on the shelf.
       </h1>
       <a
         href="/"
-        className="mt-8 font-semibold text-[#20242C] underline decoration-2 underline-offset-4 hover:text-[#C04A16]"
+        className="mt-6 font-semibold text-ink underline decoration-2 underline-offset-4 hover:text-brand"
       >
         Return to the library
       </a>
@@ -69,7 +69,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="min-h-svh bg-[#F7F7F5] text-[#20242C] antialiased selection:bg-[#FDE8D7] selection:text-[#20242C]">
+      <body className="min-h-svh bg-paper text-ink antialiased selection:bg-brand-soft selection:text-ink">
         <SiteHeader />
         {children}
         <SiteFooter />

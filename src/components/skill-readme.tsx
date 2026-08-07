@@ -27,66 +27,66 @@ function resolveUrl(value: string | undefined, skill: Skill, image = false) {
 function markdownComponents(skill: Skill): Components {
   return {
     h1: ({ children }) => (
-      <h1 className="mt-0 mb-6 border-b-2 border-[#20242C] pb-4 font-heading text-4xl leading-tight font-semibold tracking-[-0.03em] text-[#20242C] sm:text-5xl">
+      <h1 className="mt-0 mb-6 border-b-2 border-ink pb-4 font-heading text-3xl leading-[1.1] font-semibold tracking-[-0.03em] text-ink sm:text-article-title">
         {children}
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="mt-14 mb-4 border-b border-[#20242C]/15 pb-3 font-heading text-3xl leading-tight font-semibold tracking-[-0.025em] text-[#20242C]">
+      <h2 className="mt-12 mb-4 border-b border-ink/15 pb-3 font-heading text-2xl leading-tight font-semibold tracking-[-0.025em] text-ink sm:text-3xl">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mt-9 mb-3 font-heading text-2xl leading-tight font-semibold text-[#20242C]">
+      <h3 className="mt-8 mb-3 font-heading text-xl leading-tight font-semibold text-ink sm:text-2xl">
         {children}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="mt-7 mb-2 font-heading text-lg font-semibold text-[#20242C]">
+      <h4 className="mt-6 mb-2 font-heading text-lg font-semibold text-ink">
         {children}
       </h4>
     ),
     p: ({ children }) => (
-      <p className="my-4 leading-7 text-[#3D424B]">{children}</p>
+      <p className="my-4 leading-7 text-ink-muted">{children}</p>
     ),
     a: ({ href, children }) => (
       <a
         href={resolveUrl(href, skill)}
         target={href?.startsWith("#") ? undefined : "_blank"}
         rel={href?.startsWith("#") ? undefined : "noreferrer"}
-        className="font-medium text-[#C04A16] underline decoration-1 underline-offset-4 hover:text-[#E76F2E]"
+        className="font-medium text-brand underline decoration-1 underline-offset-4 hover:text-brand-bright"
       >
         {children}
       </a>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="my-5 border-l-4 border-[#FDE8D7] bg-[#F7F7F5] px-5 py-3 text-[#20242C]/70 [&>p]:my-0">
+      <blockquote className="my-5 border-l-4 border-brand-soft bg-paper px-5 py-3 text-ink/70 [&>p]:my-0">
         {children}
       </blockquote>
     ),
     ul: ({ children }) => (
-      <ul className="my-4 list-disc space-y-1 pl-6 text-[#3D424B] marker:text-[#E76F2E]">
+      <ul className="my-4 list-disc space-y-1 pl-6 text-ink-muted marker:text-brand-bright">
         {children}
       </ul>
     ),
     ol: ({ children }) => (
-      <ol className="my-4 list-decimal space-y-1 pl-6 text-[#3D424B] marker:font-mono marker:text-[#C04A16]">
+      <ol className="my-4 list-decimal space-y-1 pl-6 text-ink-muted marker:font-mono marker:text-brand">
         {children}
       </ol>
     ),
     li: ({ children }) => <li className="pl-1 leading-7">{children}</li>,
     strong: ({ children }) => (
-      <strong className="font-bold text-[#20242C]">{children}</strong>
+      <strong className="font-bold text-ink">{children}</strong>
     ),
     code: ({ className, children }) => (
       <code
-        className={`rounded bg-[#F0F0ED] px-1.5 py-0.5 font-mono text-[0.86em] text-[#20242C] ${className ?? ""}`}
+        className={`rounded bg-fog px-1.5 py-0.5 font-mono text-[0.86em] text-ink ${className ?? ""}`}
       >
         {children}
       </code>
     ),
     pre: ({ children }) => (
-      <pre className="my-5 overflow-x-auto border-2 border-[#20242C] bg-[#20242C] p-5 font-mono text-sm leading-7 text-[#F7F7F5] shadow-[4px_4px_0_#FDE8D7] [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-inherit">
+      <pre className="my-5 overflow-x-auto border-2 border-ink bg-ink p-5 font-mono text-sm leading-7 text-paper shadow-[4px_4px_0_var(--color-brand-soft)] [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-inherit">
         {children}
       </pre>
     ),
@@ -98,19 +98,19 @@ function markdownComponents(skill: Skill): Components {
       </div>
     ),
     thead: ({ children }) => (
-      <thead className="bg-[#20242C] text-white">{children}</thead>
+      <thead className="bg-ink text-white">{children}</thead>
     ),
     tbody: ({ children }) => (
-      <tbody className="divide-y divide-[#20242C]/15">{children}</tbody>
+      <tbody className="divide-y divide-ink/15">{children}</tbody>
     ),
-    tr: ({ children }) => <tr className="even:bg-[#F7F7F5]">{children}</tr>,
+    tr: ({ children }) => <tr className="even:bg-paper">{children}</tr>,
     th: ({ children }) => (
-      <th className="border border-[#20242C]/20 p-3 align-top font-semibold">
+      <th className="border border-ink/20 p-3 align-top font-semibold">
         {children}
       </th>
     ),
     td: ({ children }) => (
-      <td className="border border-[#20242C]/20 p-3 align-top leading-6">
+      <td className="border border-ink/20 p-3 align-top leading-6">
         {children}
       </td>
     ),
@@ -122,7 +122,7 @@ function markdownComponents(skill: Skill): Components {
         className="my-1 inline-block h-auto max-w-full"
       />
     ),
-    hr: () => <hr className="my-12 border-0 border-t-2 border-[#20242C]" />,
+    hr: () => <hr className="my-12 border-0 border-t-2 border-ink" />,
   }
 }
 
@@ -160,13 +160,13 @@ export function SkillReadme({ skill }: SkillReadmeProps) {
   if (error) {
     return (
       <div className="flex min-h-96 flex-col items-center justify-center px-6 py-16 text-center">
-        <span className="grid size-14 place-items-center rounded-full bg-[#E76F2E] text-white">
+        <span className="grid size-14 place-items-center rounded-full bg-brand-bright text-white">
           <AlertCircle />
         </span>
         <h2 className="mt-5 font-heading text-3xl font-semibold">
           README unavailable.
         </h2>
-        <p className="mt-3 max-w-lg text-[#20242C]/60">
+        <p className="mt-3 max-w-lg text-ink/60">
           {error}. Check the connection or open the source directly on GitHub.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">

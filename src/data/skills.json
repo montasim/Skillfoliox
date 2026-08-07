@@ -5,19 +5,19 @@
     "mark": "WR",
     "category": "Writing",
     "status": "Stable",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "featured": true,
-    "summary": "Turns repository evidence into a complete README that helps people understand, run, and trust the project.",
-    "description": "A project-type-aware Codex skill for creating or regenerating a software project's root README from verified repository evidence.",
+    "summary": "Installs one portable skill for Codex, Claude Code, or both that creates complete project READMEs from verified repository evidence.",
+    "description": "An evidence-driven, project-type-aware skill for Codex and Claude Code that creates or regenerates a software project's root README with portable installation and deterministic validation.",
     "repository": "https://github.com/montasim/write-project-readme",
     "branch": "main",
     "readme": "https://raw.githubusercontent.com/montasim/write-project-readme/main/README.md",
-    "installCommand": "npx --yes --package=github:montasim/write-project-readme#v0.2.0 write-project-readme",
-    "compatibility": ["OpenAI Codex"],
+    "installCommand": "npx --yes --package=write-project-readme@latest write-project-readme --target codex",
+    "compatibility": ["OpenAI Codex", "Claude Code"],
     "uses": [
-      "Repository documentation",
-      "README regeneration",
-      "Setup and usage guides"
+      "Evidence-driven README creation",
+      "Codex and Claude Code installation",
+      "Deterministic README validation"
     ]
   }
 ]
