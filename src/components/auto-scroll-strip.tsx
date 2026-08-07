@@ -45,7 +45,7 @@ export function AutoScrollStrip() {
     if (!track || !group) return
 
     const motionPreference = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
+      "(prefers-reduced-motion: reduce)"
     )
     let animation: Animation | undefined
     const start = () => {
@@ -63,7 +63,7 @@ export function AutoScrollStrip() {
           duration: distance / (motionPreference.matches ? 0.018 : 0.05),
           iterations: Number.POSITIVE_INFINITY,
           easing: "linear",
-        },
+        }
       )
     }
 
@@ -82,7 +82,7 @@ export function AutoScrollStrip() {
   return (
     <div
       data-auto-scroll="evidence-strip"
-      className="overflow-hidden border-b-2 border-[#20242C] bg-[#FDE8D7] py-3 font-mono text-xs font-medium tracking-widest whitespace-nowrap uppercase"
+      className="overflow-hidden border-b-2 border-ink bg-brand-soft py-3 font-mono text-xs font-medium tracking-widest whitespace-nowrap uppercase"
       aria-label={messages.join(". ")}
     >
       <div
