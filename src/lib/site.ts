@@ -7,7 +7,7 @@ export const site = {
     "Explore field-tested skills for Codex, Claude Code, and other AI coding agents. Install focused workflows for documentation and more.",
   author: "Montasim",
   url: (configuredUrl || "https://skillfoliox.netlify.app").replace(/\/$/, ""),
-  image: "/skillfolio-preview-v2.png",
+  image: "/skillfolio-preview-square-v3.png",
   locale: "en_US",
 }
 
@@ -49,12 +49,12 @@ export function seoMeta({
     { property: "og:image:secure_url", content: image },
     { property: "og:image:type", content: "image/png" },
     { property: "og:image:width", content: "1200" },
-    { property: "og:image:height", content: "630" },
+    { property: "og:image:height", content: "1200" },
     {
       property: "og:image:alt",
       content: "Skillfolio - small files, serious leverage.",
     },
-    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:card", content: "summary" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
     { name: "twitter:image", content: image },
