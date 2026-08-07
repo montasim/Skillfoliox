@@ -2,12 +2,12 @@ const configuredUrl = import.meta.env.VITE_SITE_URL as string | undefined
 
 export const site = {
   name: "Skillfolio",
-  title: "Skillfolio — Agent skill library",
+  title: "Skillfolio - Reusable AI Agent Skills for Codex and Claude Code",
   description:
-    "A curated portfolio of reusable skills that teach AI coding agents how to do one job exceptionally well.",
+    "Explore field-tested skills for Codex, Claude Code, and other AI coding agents. Install focused workflows for documentation and more.",
   author: "Montasim",
   url: (configuredUrl || "https://skillfoliox.netlify.app").replace(/\/$/, ""),
-  image: "/og-image.png",
+  image: "/skillfolio-preview-v2.png",
   locale: "en_US",
 }
 
@@ -45,15 +45,22 @@ export function seoMeta({
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:image", content: image },
+    { property: "og:image:url", content: image },
+    { property: "og:image:secure_url", content: image },
+    { property: "og:image:type", content: "image/png" },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     {
       property: "og:image:alt",
-      content: "Skillfolio — small files, serious leverage.",
+      content: "Skillfolio - small files, serious leverage.",
     },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
     { name: "twitter:image", content: image },
+    {
+      name: "twitter:image:alt",
+      content: "Skillfolio - small files, serious leverage.",
+    },
   ]
 }
