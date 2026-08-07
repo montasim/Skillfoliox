@@ -35,7 +35,6 @@ function MissingSkillDetail() {
 function ReadySkillDetail({ skill }: { skill: Skill }) {
   return (
     <SkillDetailLayout
-      patterned
       hero={
         <div>
           <Button

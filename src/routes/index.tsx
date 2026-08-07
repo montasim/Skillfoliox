@@ -63,7 +63,7 @@ function App() {
 
   return (
     <main>
-      <section className="border-b-2 border-ink/10 bg-canvas">
+      <section className="border-b-2 border-ink/10">
         <div className="mx-auto grid max-w-[1440px] items-stretch gap-12 px-5 py-12 sm:py-16 lg:grid-cols-[1.12fr_.88fr] lg:gap-16 lg:px-10 lg:py-16 xl:gap-24">
           <div className="flex animate-in flex-col justify-center duration-700 fade-in slide-in-from-bottom-3 motion-reduce:animate-none">
             <p className="mb-4 font-mono text-eyebrow tracking-[0.18em] text-brand uppercase">
