@@ -71,7 +71,7 @@
     "description": "A cross-provider release-writing skill that gathers Git history, manifests, changelogs, and validation evidence, drafts user-focused notes, and changes GitHub release state only with explicit authorization.",
     "repository": "https://github.com/montasim/craft-github-release",
     "branch": "main",
-    "installCommand": "npx --yes --package=github:montasim/craft-github-release#v0.2.0 craft-github-release --target codex",
+    "installCommand": "npx --yes --package=craft-github-release@latest craft-github-release --target codex",
     "compatibility": [
       "OpenAI Codex",
       "Claude Code",
