@@ -1,8 +1,8 @@
 import { useState } from "react"
 import type { ComponentProps } from "react"
-import { Check } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { CheckIcon } from "@/components/ui/icons"
 
 type CopyButtonProps = ComponentProps<typeof Button> & {
   value: string
@@ -46,7 +46,7 @@ export function CopyButton({
     >
       {copied ? (
         <>
-          <Check className="animate-in duration-200 zoom-in motion-reduce:animate-none" />
+          <CheckIcon className="animate-in duration-200 zoom-in motion-reduce:animate-none" />
           {typeof children === "string" ? "Copied" : null}
         </>
       ) : (

@@ -3,10 +3,10 @@ import { Skeleton } from "@/components/ui/skeleton"
 export function ReadmeSkeleton() {
   return (
     <div className="space-y-5 p-6 sm:p-10 lg:p-12" aria-label="Loading README">
-      <div className="border-b-2 border-ink pb-4">
+      <div className="border-b border-ink/20 pb-4">
         <Skeleton className="h-10 w-3/4 sm:w-1/2" />
       </div>
-      <div className="border-l-4 border-brand-soft bg-paper p-5">
+      <div className="border border-brand-soft bg-paper p-5">
         <Skeleton className="h-4 w-full" />
         <Skeleton className="mt-3 h-4 w-4/5" />
       </div>

@@ -1,19 +1,7 @@
 import { useState } from "react"
 import { Link, createFileRoute } from "@tanstack/react-router"
-import {
-  ArrowDown,
-  ArrowRight,
-  Command,
-  FileText,
-  Layers3,
-  Search,
-  SearchX,
-  ShieldCheck,
-  TrendingUp,
-} from "lucide-react"
 
-import { AutoScrollStrip } from "@/components/auto-scroll-strip"
-import { CopyButton } from "@/components/copy-button"
+import { SkillPlatformBadges } from "@/components/skill-platform-badges"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -24,13 +12,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+  ArrowDownIcon,
+  ArrowRightIcon,
+  FileDocIcon,
+  GithubLogoIcon,
+  LayersIcon,
+  SearchIcon,
+  SearchXIcon,
+  ShieldCheckIcon,
+  TrendingUpIcon,
+} from "@/components/ui/icons"
+import { Input } from "@/components/ui/input"
 import { skillCatalog } from "@/lib/skills"
 import { publishing, site } from "@/lib/site"
 
@@ -66,15 +59,24 @@ function App() {
       <section className="border-b-2 border-ink/10">
         <div className="mx-auto grid max-w-[1440px] items-stretch gap-12 px-5 py-12 sm:py-16 lg:grid-cols-[1.12fr_.88fr] lg:gap-16 lg:px-10 lg:py-16 xl:gap-24">
           <div className="flex animate-in flex-col justify-center duration-700 fade-in slide-in-from-bottom-3 motion-reduce:animate-none">
-            <p className="mb-4 font-mono text-eyebrow tracking-[0.18em] text-brand uppercase">
+            <p
+              className="mb-4 font-mono text-eyebrow tracking-[0.18em] text-brand uppercase"
+              style={{ fontSize: "0.8696875rem" }}
+            >
               Montasim&apos;s agent skill portfolio / 2026
             </p>
-            <h1 className="max-w-[850px] font-heading text-5xl leading-[0.94] font-semibold tracking-[-0.045em] sm:text-6xl lg:text-display">
+            <h1
+              className="max-w-[850px] font-heading text-display font-semibold"
+              style={{ fontSize: "2.371875rem" }}
+            >
               Small files.
               <br />
               <span className="text-brand">Serious leverage.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed lg:text-xl">
+            <p
+              className="mt-6 max-w-xl text-base leading-7"
+              style={{ fontSize: "1.265rem" }}
+            >
               A curated portfolio of skills that teach AI agents how to do one
               job exceptionally well.
             </p>
@@ -82,31 +84,30 @@ function App() {
               asChild
               variant="ghost"
               className="mt-6 h-auto w-fit gap-4 p-0 font-heading text-sm font-bold tracking-wider hover:bg-transparent"
+              style={{ fontSize: "1.106875rem" }}
             >
               <a href="#library">
                 EXPLORE THE SHELF
                 <span className="grid size-11 place-items-center border-2 border-ink bg-brand-bright text-white transition-transform group-hover/button:translate-y-1">
-                  <ArrowDown className="size-4" />
+                  <ArrowDownIcon className="size-4" />
                 </span>
               </a>
             </Button>
           </div>
 
-          <Card className="animate-in gap-0 rounded-none border-2 border-ink bg-white py-0 shadow-[6px_6px_0_var(--color-ink)] ring-0 duration-700 [animation-delay:140ms] [animation-fill-mode:both] fade-in slide-in-from-bottom-3 motion-reduce:animate-none">
+          <Card className="animate-in gap-0 rounded-none border border-ink/30 bg-white py-0 shadow-[0_18px_40px_-28px_rgba(32,36,44,0.42)] ring-0 duration-700 [animation-delay:140ms] [animation-fill-mode:both] fade-in slide-in-from-bottom-3 motion-reduce:animate-none">
             <CardHeader className="p-6 sm:p-8">
               <div>
                 <Badge
                   variant="outline"
-                  className="h-7 rounded-none border-ink bg-brand-soft px-3 font-mono text-meta font-normal tracking-[0.16em] text-brand"
+                  className="rounded-none border-brand/25 bg-brand-soft/55 font-mono text-meta font-normal tracking-[0.16em] text-brand"
                 >
                   QUICK STATS
                 </Badge>
-                <CardTitle className="mt-4 text-2xl">
-                  Library snapshot
-                </CardTitle>
+                <CardTitle className="mt-4 text-xl">Library snapshot</CardTitle>
               </div>
               <CardAction>
-                <Badge className="h-7 rounded-none border border-ink bg-ink px-3 font-mono text-meta tracking-widest text-white">
+                <Badge className="rounded-none border border-ink/20 bg-ink font-mono text-meta tracking-widest text-white">
                   2026
                 </Badge>
               </CardAction>
@@ -117,19 +118,23 @@ function App() {
                   {
                     label: "Skills published",
                     value: String(catalogSummary.total).padStart(2, "0"),
-                    Icon: FileText,
+                    Icon: FileDocIcon,
                   },
                   {
                     label: "Disciplines",
                     value: String(catalogSummary.categories).padStart(2, "0"),
-                    Icon: Layers3,
+                    Icon: LayersIcon,
                   },
                   {
                     label: "Stable releases",
                     value: String(catalogSummary.stable).padStart(2, "0"),
-                    Icon: ShieldCheck,
+                    Icon: ShieldCheckIcon,
                   },
-                  { label: "Status", value: "Growing", Icon: TrendingUp },
+                  {
+                    label: "Status",
+                    value: "Growing",
+                    Icon: TrendingUpIcon,
+                  },
                 ].map(({ label, value, Icon }) => (
                   <div
                     key={label}
@@ -141,7 +146,7 @@ function App() {
                       </dt>
                       <Icon className="size-4 text-brand" aria-hidden="true" />
                     </div>
-                    <dd className="mt-2 font-heading text-3xl font-semibold">
+                    <dd className="mt-2 font-heading text-2xl font-semibold">
                       {value}
                     </dd>
                   </div>
@@ -160,16 +165,14 @@ function App() {
                     {featuredSkill.name}
                   </span>
                 </span>
-                <span className="grid size-10 shrink-0 place-items-center border border-ink bg-brand-soft transition-transform group-hover:translate-x-1">
-                  <ArrowRight className="size-4" />
+                <span className="grid size-10 shrink-0 place-items-center border border-ink/30 bg-brand-soft/55 transition-transform group-hover:translate-x-1">
+                  <ArrowRightIcon className="size-4" />
                 </span>
               </Link>
             </CardContent>
           </Card>
         </div>
       </section>
-
-      <AutoScrollStrip />
 
       <section
         id="library"
@@ -180,7 +183,7 @@ function App() {
             <p className="mb-4 font-mono text-eyebrow tracking-[0.18em] text-brand uppercase">
               The working shelf
             </p>
-            <h2 className="font-heading text-4xl font-semibold tracking-[-0.035em] sm:text-section-title">
+            <h2 className="font-heading text-xl font-semibold tracking-tight sm:text-section-title">
               Choose a capability.
             </h2>
           </div>
@@ -191,9 +194,9 @@ function App() {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search the shelf..."
-              className="h-12 rounded-none border-2 border-ink bg-white pr-11 font-mono shadow-none focus-visible:border-brand focus-visible:ring-brand-soft"
+              className="h-12 rounded-none border border-ink/30 bg-white pr-11 font-mono shadow-none focus-visible:border-brand/70 focus-visible:ring-brand-soft"
             />
-            <Search className="absolute top-1/2 right-4 size-4 -translate-y-1/2" />
+            <SearchIcon className="absolute top-1/2 right-4 size-4 -translate-y-1/2" />
           </label>
         </div>
 
@@ -207,8 +210,8 @@ function App() {
               onClick={() => setCategory(item)}
               className={
                 category === item
-                  ? "rounded-none border-2 border-ink bg-ink px-4 text-white"
-                  : "rounded-none border-2 border-ink bg-white px-4 hover:bg-brand-soft"
+                  ? "rounded-none border border-ink/30 bg-ink px-4 text-white"
+                  : "rounded-none border border-ink/25 bg-white px-4 text-ink/80 hover:border-ink/40 hover:bg-brand-soft/55"
               }
             >
               {item}
@@ -221,16 +224,16 @@ function App() {
             {visibleSkills.map((skill) => (
               <Card
                 key={skill.slug}
-                className="min-h-[350px] gap-0 rounded-none border-2 border-ink bg-white py-0 shadow-[6px_6px_0_var(--color-ink)] ring-0 transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0_var(--color-ink)]"
+                className="min-h-[350px] gap-0 rounded-none border border-ink/30 bg-white py-0 shadow-[0_14px_30px_-24px_rgba(32,36,44,0.42)] ring-0 transition-all hover:-translate-y-0.5 hover:border-ink/45 hover:shadow-[0_18px_36px_-24px_rgba(32,36,44,0.5)]"
               >
-                <CardHeader className="border-b-2 border-ink p-6">
-                  <div className="grid size-14 place-items-center border-2 border-ink bg-brand font-heading text-lg font-bold text-white">
+                <CardHeader className="border-b border-ink/20 p-6">
+                  <div className="grid size-14 place-items-center border border-ink/35 bg-paper font-heading text-lg font-semibold text-ink/85">
                     {skill.mark}
                   </div>
                   <CardAction>
                     <Badge
                       variant="outline"
-                      className="rounded-none border-ink font-mono text-meta font-normal tracking-wider uppercase"
+                      className="rounded-none border-ink/30 font-mono text-meta font-normal tracking-wider text-ink/75 uppercase"
                     >
                       {skill.status} · v{skill.version}
                     </Badge>
@@ -240,34 +243,35 @@ function App() {
                   <p className="font-mono text-eyebrow tracking-widest text-brand uppercase">
                     {skill.category}
                   </p>
-                  <CardTitle className="mt-2 text-2xl tracking-tight">
+                  <CardTitle className="mt-2 text-lg tracking-tight">
                     {skill.name}
                   </CardTitle>
                   <CardDescription className="mt-3 leading-relaxed text-ink/65">
                     {skill.summary}
                   </CardDescription>
-                  <div className="mt-auto flex items-center justify-between pt-8">
+                  <SkillPlatformBadges
+                    platforms={skill.compatibility}
+                    className="mt-5"
+                  />
+                  <div className="mt-auto flex items-center justify-between gap-5 pt-8">
                     <Button asChild variant="link" className="h-auto p-0">
                       <Link to="/skills/$slug" params={{ slug: skill.slug }}>
-                        View skill <ArrowRight />
+                        View skill <ArrowRightIcon />
                       </Link>
                     </Button>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <CopyButton
-                            value={skill.installCommand}
-                            label="Copy install command"
-                            variant="outline"
-                            size="icon-lg"
-                            className="rounded-none border-2 border-ink hover:bg-brand-soft"
-                          >
-                            <Command />
-                          </CopyButton>
-                        </TooltipTrigger>
-                        <TooltipContent side="top">Copy command</TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <Button
+                      asChild
+                      variant="link"
+                      className="h-auto p-0 text-ink/65 hover:text-brand"
+                    >
+                      <a
+                        href={skill.repository}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <GithubLogoIcon /> GitHub source
+                      </a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -277,18 +281,18 @@ function App() {
           <Card
             role="status"
             aria-live="polite"
-            className="mt-10 gap-0 rounded-none border-2 border-ink bg-white py-0 shadow-[6px_6px_0_var(--color-ink)] ring-0"
+            className="mt-10 gap-0 rounded-none border border-ink/30 bg-white py-0 shadow-[0_14px_30px_-24px_rgba(32,36,44,0.42)] ring-0"
           >
             <CardContent className="flex min-h-56 flex-col items-start gap-8 p-6 sm:p-8 md:flex-row md:items-center md:justify-between lg:p-10">
               <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
                 <div className="grid size-14 shrink-0 place-items-center border-2 border-ink bg-brand-soft text-brand">
-                  <SearchX className="size-6" aria-hidden="true" />
+                  <SearchXIcon className="size-6" />
                 </div>
                 <div>
                   <p className="font-mono text-eyebrow tracking-[0.18em] text-brand uppercase">
                     No matches
                   </p>
-                  <h3 className="mt-2 font-heading text-2xl font-semibold tracking-tight">
+                  <h3 className="mt-2 font-heading text-lg font-semibold tracking-tight">
                     Nothing on this shelf yet.
                   </h3>
                   <p className="mt-2 text-ink/60">
@@ -320,7 +324,7 @@ function App() {
             <p className="font-mono text-eyebrow tracking-[0.18em] text-brand-soft uppercase">
               What makes the cut
             </p>
-            <h2 className="mt-4 font-heading text-4xl font-semibold tracking-[-0.035em] sm:text-section-title">
+            <h2 className="mt-4 font-heading text-xl font-semibold tracking-tight sm:text-section-title">
               Built from work,
               <br />
               not theory.
@@ -349,7 +353,7 @@ function App() {
                 className="border-b border-paper/20 p-8 last:border-b-0 sm:border-r sm:border-b-0 sm:last:border-r-0 lg:p-10"
               >
                 <span className="font-mono text-brand-bright">{number}</span>
-                <h3 className="mt-8 font-heading text-xl font-semibold">
+                <h3 className="mt-8 font-heading text-lg font-semibold">
                   {title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-paper/65">

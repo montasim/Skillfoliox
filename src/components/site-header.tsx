@@ -1,8 +1,13 @@
 import { Link } from "@tanstack/react-router"
-import { LibraryBig, Menu, ShieldCheck } from "lucide-react"
 
-import { BrandMark, GitHubIcon } from "@/components/brand-mark"
+import { BrandMark } from "@/components/brand-mark"
 import { Button } from "@/components/ui/button"
+import {
+  GithubLogoIcon,
+  LibraryIcon,
+  MenuIcon,
+  ShieldCheckIcon,
+} from "@/components/ui/icons"
 import {
   Sheet,
   SheetClose,
@@ -14,8 +19,8 @@ import {
 } from "@/components/ui/sheet"
 
 const nav = [
-  { label: "Library", href: "/#library", icon: LibraryBig },
-  { label: "Principles", href: "/#principles", icon: ShieldCheck },
+  { label: "Library", href: "/#library", icon: LibraryIcon },
+  { label: "Principles", href: "/#principles", icon: ShieldCheckIcon },
 ]
 
 export function SiteHeader() {
@@ -29,7 +34,7 @@ export function SiteHeader() {
           to="/"
           className="group flex items-center gap-3 font-heading text-lg font-bold"
         >
-          <BrandMark className="size-9 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[-4deg]" />
+          <BrandMark className="size-9 transition-transform duration-300 group-hover:scale-[1.03]" />
           SKILLFOLIO
         </Link>
 
@@ -49,7 +54,7 @@ export function SiteHeader() {
               target="_blank"
               rel="noreferrer"
             >
-              <GitHubIcon /> GitHub
+              <GithubLogoIcon /> GitHub
             </a>
           </Button>
         </div>
@@ -62,7 +67,7 @@ export function SiteHeader() {
               className="rounded-none border-2 border-ink sm:hidden"
               aria-label="Open menu"
             >
-              <Menu />
+              <MenuIcon />
             </Button>
           </SheetTrigger>
           <SheetContent className="border-l-2 border-ink bg-paper">

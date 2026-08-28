@@ -7,7 +7,9 @@ export function SiteFooter() {
         <p className="flex items-center gap-2 font-heading font-bold">
           <BrandMark className="size-7" /> SKILLFOLIO © 2026
         </p>
-        <p className="text-ink/60">Made in Dhaka · Kept in plain text</p>
+        <p className="text-ink/60">
+          Reusable AI agent skills for real-world work.
+        </p>
       </div>
     </footer>
   )

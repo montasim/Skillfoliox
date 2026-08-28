@@ -17,7 +17,7 @@ export function SkillDetailPending() {
         </div>
       }
       install={
-        <Card className="gap-0 rounded-none border-2 border-ink bg-brand-soft py-0 shadow-[6px_6px_0_var(--color-ink)] ring-0">
+        <Card className="gap-0 rounded-none border border-brand/25 bg-brand-soft/45 py-0 shadow-[0_18px_40px_-28px_rgba(32,36,44,0.42)] ring-0">
           <CardHeader className="p-6 pb-0">
             <Skeleton className="h-4 w-36 bg-ink/15" />
           </CardHeader>
@@ -37,8 +37,8 @@ export function SkillDetailPending() {
         </aside>
       }
       document={
-        <article className="min-w-0 overflow-hidden rounded-none border-2 border-ink bg-white shadow-[6px_6px_0_var(--color-ink)]">
-          <header className="flex items-center gap-3 border-b-2 border-ink bg-paper px-5 py-4 sm:px-7">
+        <article className="min-w-0 overflow-hidden rounded-none border border-ink/30 bg-white shadow-[0_18px_40px_-28px_rgba(32,36,44,0.42)]">
+          <header className="flex items-center gap-3 border-b border-ink/20 bg-paper px-5 py-4 sm:px-7">
             <Skeleton className="size-9" />
             <div className="space-y-2">
               <Skeleton className="h-4 w-24" />

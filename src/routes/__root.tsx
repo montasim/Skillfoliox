@@ -47,7 +47,7 @@ export const Route = createRootRoute({
       <p className="font-mono text-eyebrow tracking-[0.18em] text-brand uppercase">
         404 / shelf miss
       </p>
-      <h1 className="mt-4 max-w-2xl font-heading text-4xl leading-[0.96] font-semibold tracking-[-0.04em] text-ink sm:text-5xl lg:text-page-title">
+      <h1 className="mt-4 max-w-2xl font-heading text-2xl leading-tight font-semibold tracking-tight text-ink sm:text-page-title">
         That skill is not on the shelf.
       </h1>
       <a
