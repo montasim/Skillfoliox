@@ -89,6 +89,34 @@
     ]
   },
   {
+    "slug": "contractguard",
+    "name": "ContractGuard",
+    "mark": "CG",
+    "category": "Maintenance",
+    "status": "Stable",
+    "version": "0.1.0",
+    "featured": false,
+    "summary": "Detects frontend-breaking changes between OpenAPI response contracts before deployment.",
+    "description": "A directional OpenAPI compatibility skill and CLI that classifies response schema, example, and authentication changes as safe, risky, or breaking for JavaScript, schema-validator, and strict-decoder consumers.",
+    "repository": "https://github.com/montasim/contractguard",
+    "branch": "main",
+    "installCommand": "npx skills add montasim/contractguard --skill contractguard",
+    "compatibility": [
+      "OpenAI Codex",
+      "Claude Code",
+      "Gemini CLI",
+      "Google Antigravity",
+      "Cursor",
+      "GitHub Copilot",
+      "OpenCode"
+    ],
+    "uses": [
+      "Frontend API compatibility reviews",
+      "OpenAPI response and authentication diffs",
+      "CI compatibility gates"
+    ]
+  },
+  {
     "slug": "docs-watch",
     "name": "DocsWatch",
     "mark": "DW",
