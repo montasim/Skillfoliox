@@ -170,3 +170,50 @@
     --page-grid-size: 24px;
   }
 }
+
+body .sk-widget-btn {
+  min-height: 42px;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--primary);
+  border-radius: 0;
+  background: var(--card);
+  color: var(--primary);
+  box-shadow: none;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+body .sk-widget-btn:hover {
+  border-color: var(--primary);
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+body .sk-widget-btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ring) 35%, transparent);
+  outline-offset: 3px;
+}
+
+body .sk-widget-btn svg {
+  width: 18px;
+  height: 18px;
+  color: var(--primary);
+}
+
+@media (max-width: 680px) {
+  body .sk-widget-iframe-container {
+    right: 14px;
+    left: 14px;
+    bottom: calc(env(safe-area-inset-bottom) + 70px);
+    width: auto;
+    height: min(550px, calc(100dvh - env(safe-area-inset-bottom) - 94px));
+  }
+}
